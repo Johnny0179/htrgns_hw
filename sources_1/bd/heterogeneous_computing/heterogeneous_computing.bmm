@@ -1,38 +1,32 @@
 WORKFLOW_OPERATION simulation,dialog;
 
-DEFINE_MEMORY_TYPE microblaze_0_local_memory_lmb_bram_128K_1_MEM_DEVICE [0x00020000] 32;
-DEFINE_MEMORY_TYPE ps_pl_shared_mem_32K_6_MEM_DEVICE [0x00008000] 32;
-DEFINE_MEMORY_TYPE mb_d_cache_MEM_DEVICE [0x00002000] 32;
-DEFINE_MEMORY_TYPE mb_i_cache_MEM_DEVICE [0x00002000] 32;
-DEFINE_MEMORY_TYPE ps_pl_shared_mem_32K_7_MEM_DEVICE [0x00008000] 32;
+DEFINE_MEMORY_TYPE microblaze_sub_sys_microblaze_0_local_memory_lmb_bram_MEM_DEVICE [0x00020000] 32;
+DEFINE_MEMORY_TYPE ps_pl_shared_mem_MEM_DEVICE [0x00008000] 32;
+DEFINE_MEMORY_TYPE microblaze_sub_sys_microblaze_cache_blk_mem_gen_1_MEM_DEVICE [0x00002000] 32;
+DEFINE_MEMORY_TYPE ps_pl_shared_mem_32K_1_MEM_DEVICE [0x00008000] 32;
 
-ADDRESS_MAP microblaze_0 MICROBLAZE-LE 100 microblaze_0
-   ADDRESS_SPACE microblaze_0_local_memory_lmb_bram_128K_1_ADDR_SPACE microblaze_0_local_memory_lmb_bram_128K_1_MEM_DEVICE  [0x00000000:0x0001FFFF] microblaze_0_local_memory/dlmb_bram_if_cntlr
+ADDRESS_MAP microblaze_sub_sys_microblaze_0 MICROBLAZE-LE 100 microblaze_sub_sys/microblaze_0
+   ADDRESS_SPACE microblaze_sub_sys_microblaze_0_local_memory_lmb_bram_ADDR_SPACE microblaze_sub_sys_microblaze_0_local_memory_lmb_bram_MEM_DEVICE  [0x00000000:0x0001FFFF] microblaze_sub_sys/microblaze_0_local_memory/dlmb_bram_if_cntlr
      BUS_BLOCK
-      microblaze_0_local_memory_lmb_bram_128K_1_BUS_BLK [31:0] INPUT = "heterogeneous_computing_lmb_bram_1.mem";
+      microblaze_sub_sys_microblaze_0_local_memory_lmb_bram_BUS_BLK [31:0] INPUT = "heterogeneous_computing_lmb_bram_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE ps_pl_shared_mem_32K_6_ADDR_SPACE ps_pl_shared_mem_32K_6_MEM_DEVICE  [0x40000000:0x40007FFF] axi_bram_ctrl_pl
+   ADDRESS_SPACE ps_pl_shared_mem_ADDR_SPACE ps_pl_shared_mem_MEM_DEVICE  [0xC0000000:0xC0007FFF] microblaze_sub_sys/microblaze_periph/axi_bram_ctrl_pl
      BUS_BLOCK
-      ps_pl_shared_mem_32K_6_BUS_BLK [31:0] INPUT = "heterogeneous_computing_ps_pl_mem_0.mem";
+      ps_pl_shared_mem_BUS_BLK [31:0] INPUT = "heterogeneous_computing_ps_pl_mem_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE mb_d_cache_ADDR_SPACE mb_d_cache_MEM_DEVICE  [0xC0000000:0xC0001FFF] axi_bram_ctrl_0
+   ADDRESS_SPACE microblaze_sub_sys_microblaze_cache_blk_mem_gen_1_ADDR_SPACE microblaze_sub_sys_microblaze_cache_blk_mem_gen_1_MEM_DEVICE  [0xC2000000:0xC2001FFF] microblaze_sub_sys/microblaze_cache/axi_bram_ctrl_microblaze
      BUS_BLOCK
-      mb_d_cache_BUS_BLK [31:0] INPUT = "heterogeneous_computing_mb_i_cache_0.mem";
-     END_BUS_BLOCK;
-   END_ADDRESS_SPACE;
-   ADDRESS_SPACE mb_i_cache_ADDR_SPACE mb_i_cache_MEM_DEVICE  [0xC0000000:0xC0001FFF] axi_bram_ctrl_1
-     BUS_BLOCK
-      mb_i_cache_BUS_BLK [31:0] INPUT = "heterogeneous_computing_blk_mem_gen_0_1.mem";
+      microblaze_sub_sys_microblaze_cache_blk_mem_gen_1_BUS_BLK [31:0] INPUT = "heterogeneous_computing_blk_mem_gen_1_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
 END_ADDRESS_MAP;
 
 ADDRESS_MAP processing_system7_0 ARM 100 processing_system7_0
-   ADDRESS_SPACE ps_pl_shared_mem_32K_7_ADDR_SPACE ps_pl_shared_mem_32K_7_MEM_DEVICE  [0x40000000:0x40007FFF] axi_bram_ctrl_ps
+   ADDRESS_SPACE ps_pl_shared_mem_32K_1_ADDR_SPACE ps_pl_shared_mem_32K_1_MEM_DEVICE  [0x40000000:0x40007FFF] axi_bram_ctrl_ps
      BUS_BLOCK
-      ps_pl_shared_mem_32K_7_BUS_BLK [31:0] INPUT = "heterogeneous_computing_ps_pl_mem_0.mem";
+      ps_pl_shared_mem_32K_1_BUS_BLK [31:0] INPUT = "heterogeneous_computing_ps_pl_mem_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
 END_ADDRESS_MAP;

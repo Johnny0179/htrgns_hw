@@ -1,15 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Root MajorVersion="0" MinorVersion="33">
+<Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="heterogeneous_computing" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1569484594"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1569484594"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1569484594"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1569484594"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1570586221"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1570586221"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1570586221"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1570586221"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/heterogeneous_computing_axi_bram_ctrl_0_0/heterogeneous_computing_axi_bram_ctrl_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_ps"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569226919" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570586217" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_axi_bram_ctrl_2_0/heterogeneous_computing_axi_bram_ctrl_2_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_cache/axi_bram_ctrl_microblaze"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_axi_bram_ctrl_pl_0/heterogeneous_computing_axi_bram_ctrl_pl_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_periph/axi_bram_ctrl_pl"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_axi_mem_intercon_1_0/heterogeneous_computing_axi_mem_intercon_1_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_cache/axi_mem_intercon_1"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="1569747403" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_axi_timer_0_0/heterogeneous_computing_axi_timer_0_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_periph/axi_timer_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_blk_mem_gen_1_0/heterogeneous_computing_blk_mem_gen_1_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_cache/blk_mem_gen_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1569749247" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_mdm_1_0/heterogeneous_computing_mdm_1_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_rst/mdm_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1569747422" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_microblaze_0_0/heterogeneous_computing_microblaze_0_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570586217" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_microblaze_0_axi_intc_0/heterogeneous_computing_microblaze_0_axi_intc_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_interrupt/microblaze_0_axi_intc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_microblaze_0_axi_periph_0/heterogeneous_computing_microblaze_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_periph/microblaze_0_axi_periph"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="1569747408" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_microblaze_0_xlconcat_0/heterogeneous_computing_microblaze_0_xlconcat_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_interrupt/microblaze_0_xlconcat"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1569747409" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -17,7 +97,7 @@
       </File>
       <File Name="ip/heterogeneous_computing_processing_system7_0_0/heterogeneous_computing_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464107" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -25,7 +105,7 @@
       </File>
       <File Name="ip/heterogeneous_computing_ps_pl_mem_0/heterogeneous_computing_ps_pl_mem_0.xci" Type="IP">
         <Instance HierarchyPath="ps_pl_shared_mem"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1568522901" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1569747422" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -33,7 +113,79 @@
       </File>
       <File Name="ip/heterogeneous_computing_rst_ps7_0_100M_0/heterogeneous_computing_rst_ps7_0_100M_0.xci" Type="IP">
         <Instance HierarchyPath="rst_ps7_0_100M"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1568522901" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_rst_ps7_0_100M_1_0/heterogeneous_computing_rst_ps7_0_100M_1_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_rst/rst_microblaze_100M"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_dlmb_v10_0/heterogeneous_computing_dlmb_v10_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_0_local_memory/dlmb_v10"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_ilmb_v10_0/heterogeneous_computing_ilmb_v10_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_0_local_memory/ilmb_v10"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_dlmb_bram_if_cntlr_0/heterogeneous_computing_dlmb_bram_if_cntlr_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_0_local_memory/dlmb_bram_if_cntlr"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_ilmb_bram_if_cntlr_0/heterogeneous_computing_ilmb_bram_if_cntlr_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_0_local_memory/ilmb_bram_if_cntlr"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_lmb_bram_0/heterogeneous_computing_lmb_bram_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_0_local_memory/lmb_bram"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1569747422" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_axi_uartlite_0_0/heterogeneous_computing_axi_uartlite_0_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_periph/axi_uartlite_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_xbar_2/heterogeneous_computing_xbar_2.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_cache/axi_mem_intercon_1/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570586216" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_xbar_3/heterogeneous_computing_xbar_3.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_periph/microblaze_0_axi_periph/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570581781" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -50,177 +202,33 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/heterogeneous_computing_microblaze_0_1/heterogeneous_computing_microblaze_0_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569470510" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_microblaze_0_axi_intc_1/heterogeneous_computing_microblaze_0_axi_intc_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_intc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569469687" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_microblaze_0_xlconcat_1/heterogeneous_computing_microblaze_0_xlconcat_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_xlconcat"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464107" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_mdm_1_1/heterogeneous_computing_mdm_1_1.xci" Type="IP">
-        <Instance HierarchyPath="mdm_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464107" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_rst_ps7_0_100M_1_1/heterogeneous_computing_rst_ps7_0_100M_1_1.xci" Type="IP">
-        <Instance HierarchyPath="rst_ps7_0_100M_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464107" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_axi_uartlite_0_1/heterogeneous_computing_axi_uartlite_0_1.xci" Type="IP">
-        <Instance HierarchyPath="axi_uartlite_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569469687" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_axi_bram_ctrl_0_1/heterogeneous_computing_axi_bram_ctrl_0_1.xci" Type="IP">
-        <Instance HierarchyPath="axi_bram_ctrl_pl"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569469687" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_dlmb_v10_1/heterogeneous_computing_dlmb_v10_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_local_memory/dlmb_v10"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464108" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_ilmb_v10_1/heterogeneous_computing_ilmb_v10_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_local_memory/ilmb_v10"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464108" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_dlmb_bram_if_cntlr_1/heterogeneous_computing_dlmb_bram_if_cntlr_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_local_memory/dlmb_bram_if_cntlr"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464108" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_ilmb_bram_if_cntlr_1/heterogeneous_computing_ilmb_bram_if_cntlr_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_local_memory/ilmb_bram_if_cntlr"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464108" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_lmb_bram_1/heterogeneous_computing_lmb_bram_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_local_memory/lmb_bram"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569464108" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_microblaze_0_axi_periph_0/heterogeneous_computing_microblaze_0_axi_periph_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_periph"/>
-        <Properties IsEditable="false" IsVisible="false" Timestamp="1569469674" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_xbar_1/heterogeneous_computing_xbar_1.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_periph/xbar"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569469687" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_axi_timer_0_0/heterogeneous_computing_axi_timer_0_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_timer_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_axi_bram_ctrl_0_2/heterogeneous_computing_axi_bram_ctrl_0_2.xci" Type="IP">
-        <Instance HierarchyPath="axi_bram_ctrl_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_axi_bram_ctrl_0_3/heterogeneous_computing_axi_bram_ctrl_0_3.xci" Type="IP">
-        <Instance HierarchyPath="axi_bram_ctrl_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_axi_mem_intercon_0/heterogeneous_computing_axi_mem_intercon_0.xci" Type="IP">
+      <File Name="ip/heterogeneous_computing_axi_mem_intercon_2/heterogeneous_computing_axi_mem_intercon_2.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon"/>
-        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_blk_mem_gen_0_1/heterogeneous_computing_blk_mem_gen_0_1.xci" Type="IP">
-        <Instance HierarchyPath="mb_i_cache"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_mb_i_cache_0/heterogeneous_computing_mb_i_cache_0.xci" Type="IP">
-        <Instance HierarchyPath="mb_d_cache"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/heterogeneous_computing_auto_pc_1/heterogeneous_computing_auto_pc_1.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="1570586202" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/heterogeneous_computing_auto_pc_0/heterogeneous_computing_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_periph/m02_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_periph/microblaze_0_axi_periph/m01_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570586217" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_auto_pc_1/heterogeneous_computing_auto_pc_1.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_sub_sys/microblaze_periph/microblaze_0_axi_periph/m02_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570586217" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/heterogeneous_computing_auto_pc_2/heterogeneous_computing_auto_pc_2.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1570586217" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -253,6 +261,11 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="sim/heterogeneous_computing.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>
   </CompositeFile>

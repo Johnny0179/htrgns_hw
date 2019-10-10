@@ -1,10 +1,10 @@
-// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Mon Sep 23 11:26:33 2019
+// Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+// Date        : Tue Oct  8 16:12:05 2019
 // Host        : johnny-OptiPlex-7040 running 64-bit Ubuntu 16.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
-//               /home/johnny/zynq/heterogeneous_computing/heterogeneous_computing_0921/heterogeneous_computing_0921.srcs/sources_1/bd/heterogeneous_computing/ip/heterogeneous_computing_ps_pl_mem_0/heterogeneous_computing_ps_pl_mem_0_sim_netlist.v
+//               /home/johnny/zynq/htrgns_computing/heterogeneous_computing_1008/heterogeneous_computing_1008.srcs/sources_1/bd/heterogeneous_computing/ip/heterogeneous_computing_ps_pl_mem_0/heterogeneous_computing_ps_pl_mem_0_sim_netlist.v
 // Design      : heterogeneous_computing_ps_pl_mem_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "heterogeneous_computing_ps_pl_mem_0,blk_mem_gen_v8_4_1,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_1,Vivado 2017.4" *) 
+(* CHECK_LICENSE_TYPE = "heterogeneous_computing_ps_pl_mem_0,blk_mem_gen_v8_4_3,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_3,Vivado 2019.1" *) 
 (* NotValidForBitStream *)
 module heterogeneous_computing_ps_pl_mem_0
    (clka,
@@ -31,14 +31,14 @@ module heterogeneous_computing_ps_pl_mem_0
     doutb,
     rsta_busy,
     rstb_busy);
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE" *) input clka;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE, READ_LATENCY 1" *) input clka;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA RST" *) input rsta;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *) input ena;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA WE" *) input [3:0]wea;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR" *) input [31:0]addra;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA DIN" *) input [31:0]dina;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT" *) output [31:0]douta;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE" *) input clkb;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE, READ_LATENCY 1" *) input clkb;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB RST" *) input rstb;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB EN" *) input enb;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB WE" *) input [3:0]web;
@@ -132,6 +132,8 @@ module heterogeneous_computing_ps_pl_mem_0
   (* C_PRIM_TYPE = "1" *) 
   (* C_READ_DEPTH_A = "8192" *) 
   (* C_READ_DEPTH_B = "8192" *) 
+  (* C_READ_LATENCY_A = "1" *) 
+  (* C_READ_LATENCY_B = "1" *) 
   (* C_READ_WIDTH_A = "32" *) 
   (* C_READ_WIDTH_B = "32" *) 
   (* C_RSTRAM_A = "0" *) 
@@ -156,7 +158,7 @@ module heterogeneous_computing_ps_pl_mem_0
   (* C_WRITE_WIDTH_B = "32" *) 
   (* C_XDEVICEFAMILY = "zynq" *) 
   (* downgradeipidentifiedwarnings = "yes" *) 
-  heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 U0
+  heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 U0
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -258,11 +260,7 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr
   input enb;
 
   wire ENA_I;
-  wire ENA_dly;
   wire ENB_I;
-  wire ENB_dly;
-  wire POR_A;
-  wire POR_B;
   wire [12:0]addra;
   wire [12:0]addrb;
   wire clka;
@@ -274,9 +272,7 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr
   wire ena;
   wire enb;
   wire ram_rstram_a;
-  wire ram_rstram_a_busy;
   wire ram_rstram_b;
-  wire ram_rstram_b_busy;
   wire rsta;
   wire rsta_busy;
   wire rstb;
@@ -361,11 +357,7 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr
         .web(web[2]));
   heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized4 \ramloop[5].ram.r 
        (.ENA_I(ENA_I),
-        .ENA_dly(ENA_dly),
         .ENB_I(ENB_I),
-        .ENB_dly(ENB_dly),
-        .POR_A(POR_A),
-        .POR_B(POR_B),
         .addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -375,13 +367,7 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr
         .douta(douta[23:20]),
         .doutb(doutb[23:20]),
         .ram_rstram_a(ram_rstram_a),
-        .ram_rstram_a_busy(ram_rstram_a_busy),
         .ram_rstram_b(ram_rstram_b),
-        .ram_rstram_b_busy(ram_rstram_b_busy),
-        .rsta(rsta),
-        .rsta_busy(rsta_busy),
-        .rstb(rstb),
-        .rstb_busy(rstb_busy),
         .wea(wea[2]),
         .web(web[2]));
   heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized5 \ramloop[6].ram.r 
@@ -401,11 +387,7 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr
         .web(web[3]));
   heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized6 \ramloop[7].ram.r 
        (.ENA_I(ENA_I),
-        .ENA_dly(ENA_dly),
         .ENB_I(ENB_I),
-        .ENB_dly(ENB_dly),
-        .POR_A(POR_A),
-        .POR_B(POR_B),
         .addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -417,11 +399,11 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr
         .ena(ena),
         .enb(enb),
         .ram_rstram_a(ram_rstram_a),
-        .ram_rstram_a_busy(ram_rstram_a_busy),
         .ram_rstram_b(ram_rstram_b),
-        .ram_rstram_b_busy(ram_rstram_b_busy),
         .rsta(rsta),
+        .rsta_busy(rsta_busy),
         .rstb(rstb),
+        .rstb_busy(rstb_busy),
         .wea(wea[3]),
         .web(web[3]));
 endmodule
@@ -745,10 +727,6 @@ endmodule
 module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized4
    (douta,
     doutb,
-    rsta_busy,
-    rstb_busy,
-    ENA_dly,
-    ENB_dly,
     clka,
     clkb,
     ENA_I,
@@ -760,19 +738,9 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
     dina,
     dinb,
     wea,
-    web,
-    ram_rstram_a_busy,
-    ram_rstram_b_busy,
-    rsta,
-    POR_A,
-    rstb,
-    POR_B);
+    web);
   output [3:0]douta;
   output [3:0]doutb;
-  output rsta_busy;
-  output rstb_busy;
-  output ENA_dly;
-  output ENB_dly;
   input clka;
   input clkb;
   input ENA_I;
@@ -785,19 +753,9 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   input [3:0]dinb;
   input [0:0]wea;
   input [0:0]web;
-  input ram_rstram_a_busy;
-  input ram_rstram_b_busy;
-  input rsta;
-  input POR_A;
-  input rstb;
-  input POR_B;
 
   wire ENA_I;
-  wire ENA_dly;
   wire ENB_I;
-  wire ENB_dly;
-  wire POR_A;
-  wire POR_B;
   wire [12:0]addra;
   wire [12:0]addrb;
   wire clka;
@@ -807,44 +765,10 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   wire [3:0]douta;
   wire [3:0]doutb;
   wire ram_rstram_a;
-  wire ram_rstram_a_busy;
   wire ram_rstram_b;
-  wire ram_rstram_b_busy;
-  wire rsta;
-  wire rsta_busy;
-  wire rstb;
-  wire rstb_busy;
   wire [0:0]wea;
   wire [0:0]web;
 
-  FDSE #(
-    .INIT(1'b0)) 
-    \SAFETY_CKT_GEN.ENA_NO_REG.ENA_dly_reg 
-       (.C(clka),
-        .CE(1'b1),
-        .D(POR_A),
-        .Q(ENA_dly),
-        .S(rsta));
-  FDSE #(
-    .INIT(1'b0)) 
-    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg 
-       (.C(clkb),
-        .CE(1'b1),
-        .D(POR_B),
-        .Q(ENB_dly),
-        .S(rstb));
-  FDRE \SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_reg 
-       (.C(clka),
-        .CE(1'b1),
-        .D(ram_rstram_a_busy),
-        .Q(rsta_busy),
-        .R(1'b0));
-  FDRE \SAFETY_CKT_GEN.nSPRAM_RST_BUSY.RSTB_BUSY_NO_REG.RSTB_BUSY_reg 
-       (.C(clkb),
-        .CE(1'b1),
-        .D(ram_rstram_b_busy),
-        .Q(rstb_busy),
-        .R(1'b0));
   heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_wrapper__parameterized4 \prim_noinit.ram 
        (.ENA_I(ENA_I),
         .ENB_I(ENB_I),
@@ -933,10 +857,8 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
     ENB_I,
     ram_rstram_a,
     ram_rstram_b,
-    POR_A,
-    POR_B,
-    ram_rstram_a_busy,
-    ram_rstram_b_busy,
+    rsta_busy,
+    rstb_busy,
     clkb,
     clka,
     addra,
@@ -945,8 +867,6 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
     dinb,
     wea,
     web,
-    ENA_dly,
-    ENB_dly,
     rsta,
     ena,
     rstb,
@@ -957,10 +877,8 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   output ENB_I;
   output ram_rstram_a;
   output ram_rstram_b;
-  output POR_A;
-  output POR_B;
-  output ram_rstram_a_busy;
-  output ram_rstram_b_busy;
+  output rsta_busy;
+  output rstb_busy;
   input clkb;
   input clka;
   input [12:0]addra;
@@ -969,8 +887,6 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   input [3:0]dinb;
   input [0:0]wea;
   input [0:0]web;
-  input ENA_dly;
-  input ENB_dly;
   input rsta;
   input ena;
   input rstb;
@@ -1007,7 +923,9 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   wire ram_rstram_b;
   wire ram_rstram_b_busy;
   wire rsta;
+  wire rsta_busy;
   wire rstb;
+  wire rstb_busy;
   wire [0:0]wea;
   wire [0:0]web;
 
@@ -1021,17 +939,33 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
+    \SAFETY_CKT_GEN.ENA_NO_REG.ENA_dly_reg 
+       (.C(clka),
+        .CE(1'b1),
+        .D(ram_rstram_a),
+        .Q(ENA_dly),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
     \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_D_reg 
        (.C(clkb),
         .CE(1'b1),
         .D(ENB_dly),
         .Q(ENB_dly_D),
         .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg 
+       (.C(clkb),
+        .CE(1'b1),
+        .D(ram_rstram_b),
+        .Q(ENB_dly),
+        .R(1'b0));
   LUT2 #(
     .INIT(4'h6)) 
     \SAFETY_CKT_GEN.POR_A_i_1 
-       (.I0(\SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4] ),
-        .I1(\SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[0] ),
+       (.I0(\SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[0] ),
+        .I1(\SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4] ),
         .O(\SAFETY_CKT_GEN.POR_A_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -1044,8 +978,8 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   LUT2 #(
     .INIT(4'h6)) 
     \SAFETY_CKT_GEN.POR_B_i_1 
-       (.I0(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[4] ),
-        .I1(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[0] ),
+       (.I0(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[0] ),
+        .I1(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[4] ),
         .O(\SAFETY_CKT_GEN.POR_B_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -1058,11 +992,17 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   LUT4 #(
     .INIT(16'hFFFE)) 
     \SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_i_1 
-       (.I0(ENA_dly_D),
+       (.I0(POR_A),
         .I1(rsta),
-        .I2(POR_A),
-        .I3(ENA_dly),
+        .I2(ENA_dly),
+        .I3(ENA_dly_D),
         .O(ram_rstram_a_busy));
+  FDRE \SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_reg 
+       (.C(clka),
+        .CE(1'b1),
+        .D(ram_rstram_a_busy),
+        .Q(rsta_busy),
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[0] 
@@ -1124,11 +1064,17 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized
   LUT4 #(
     .INIT(16'hFFFE)) 
     \SAFETY_CKT_GEN.nSPRAM_RST_BUSY.RSTB_BUSY_NO_REG.RSTB_BUSY_i_1 
-       (.I0(ENB_dly_D),
+       (.I0(POR_B),
         .I1(rstb),
-        .I2(POR_B),
-        .I3(ENB_dly),
+        .I2(ENB_dly),
+        .I3(ENB_dly_D),
         .O(ram_rstram_b_busy));
+  FDRE \SAFETY_CKT_GEN.nSPRAM_RST_BUSY.RSTB_BUSY_NO_REG.RSTB_BUSY_reg 
+       (.C(clkb),
+        .CE(1'b1),
+        .D(ram_rstram_b_busy),
+        .Q(rstb_busy),
+        .R(1'b0));
   heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_wrapper__parameterized6 \prim_noinit.ram 
        (.ENA_I(ENA_I),
         .ENA_dly_D(ENA_dly_D),
@@ -3441,16 +3387,17 @@ endmodule
 (* C_INITA_VAL = "0" *) (* C_INITB_VAL = "0" *) (* C_INIT_FILE = "NONE" *) 
 (* C_INIT_FILE_NAME = "no_coe_file_loaded" *) (* C_INTERFACE_TYPE = "0" *) (* C_LOAD_INIT_FILE = "0" *) 
 (* C_MEM_TYPE = "2" *) (* C_MUX_PIPELINE_STAGES = "0" *) (* C_PRIM_TYPE = "1" *) 
-(* C_READ_DEPTH_A = "8192" *) (* C_READ_DEPTH_B = "8192" *) (* C_READ_WIDTH_A = "32" *) 
-(* C_READ_WIDTH_B = "32" *) (* C_RSTRAM_A = "0" *) (* C_RSTRAM_B = "0" *) 
-(* C_RST_PRIORITY_A = "CE" *) (* C_RST_PRIORITY_B = "CE" *) (* C_SIM_COLLISION_CHECK = "ALL" *) 
-(* C_USE_BRAM_BLOCK = "1" *) (* C_USE_BYTE_WEA = "1" *) (* C_USE_BYTE_WEB = "1" *) 
-(* C_USE_DEFAULT_DATA = "0" *) (* C_USE_ECC = "0" *) (* C_USE_SOFTECC = "0" *) 
-(* C_USE_URAM = "0" *) (* C_WEA_WIDTH = "4" *) (* C_WEB_WIDTH = "4" *) 
-(* C_WRITE_DEPTH_A = "8192" *) (* C_WRITE_DEPTH_B = "8192" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) 
-(* C_WRITE_MODE_B = "WRITE_FIRST" *) (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) 
-(* C_XDEVICEFAMILY = "zynq" *) (* ORIG_REF_NAME = "blk_mem_gen_v8_4_1" *) (* downgradeipidentifiedwarnings = "yes" *) 
-module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1
+(* C_READ_DEPTH_A = "8192" *) (* C_READ_DEPTH_B = "8192" *) (* C_READ_LATENCY_A = "1" *) 
+(* C_READ_LATENCY_B = "1" *) (* C_READ_WIDTH_A = "32" *) (* C_READ_WIDTH_B = "32" *) 
+(* C_RSTRAM_A = "0" *) (* C_RSTRAM_B = "0" *) (* C_RST_PRIORITY_A = "CE" *) 
+(* C_RST_PRIORITY_B = "CE" *) (* C_SIM_COLLISION_CHECK = "ALL" *) (* C_USE_BRAM_BLOCK = "1" *) 
+(* C_USE_BYTE_WEA = "1" *) (* C_USE_BYTE_WEB = "1" *) (* C_USE_DEFAULT_DATA = "0" *) 
+(* C_USE_ECC = "0" *) (* C_USE_SOFTECC = "0" *) (* C_USE_URAM = "0" *) 
+(* C_WEA_WIDTH = "4" *) (* C_WEB_WIDTH = "4" *) (* C_WRITE_DEPTH_A = "8192" *) 
+(* C_WRITE_DEPTH_B = "8192" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
+(* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) (* C_XDEVICEFAMILY = "zynq" *) 
+(* ORIG_REF_NAME = "blk_mem_gen_v8_4_3" *) (* downgradeipidentifiedwarnings = "yes" *) 
+module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3
    (clka,
     rsta,
     ena,
@@ -3716,7 +3663,7 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1
   assign sbiterr = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth inst_blk_mem_gen
+  heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3_synth inst_blk_mem_gen
        (.addra(addra[14:2]),
         .addrb(addrb[14:2]),
         .clka(clka),
@@ -3735,8 +3682,8 @@ module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_1_synth" *) 
-module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth
+(* ORIG_REF_NAME = "blk_mem_gen_v8_4_3_synth" *) 
+module heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3_synth
    (douta,
     doutb,
     rsta_busy,

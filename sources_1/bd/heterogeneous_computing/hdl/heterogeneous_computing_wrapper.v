@@ -1,7 +1,7 @@
-//Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+//Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Thu Sep 26 15:56:32 2019
+//Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+//Date        : Wed Oct  9 09:57:01 2019
 //Host        : johnny-OptiPlex-7040 running 64-bit Ubuntu 16.04.6 LTS
 //Command     : generate_target heterogeneous_computing_wrapper.bd
 //Design      : heterogeneous_computing_wrapper

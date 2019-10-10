@@ -1,10 +1,10 @@
-// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Thu Sep 26 14:59:12 2019
+// Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+// Date        : Tue Oct  8 16:09:44 2019
 // Host        : johnny-OptiPlex-7040 running 64-bit Ubuntu 16.04.6 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /home/johnny/zynq/htrgns_computing/htrgns_prj/htrgns_prj.srcs/sources_1/bd/heterogeneous_computing/ip/heterogeneous_computing_axi_timer_0_0/heterogeneous_computing_axi_timer_0_0_stub.v
+//               /home/johnny/zynq/htrgns_computing/heterogeneous_computing_1008/heterogeneous_computing_1008.srcs/sources_1/bd/heterogeneous_computing/ip/heterogeneous_computing_axi_timer_0_0/heterogeneous_computing_axi_timer_0_0_stub.v
 // Design      : heterogeneous_computing_axi_timer_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-2
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* x_core_info = "axi_timer,Vivado 2017.4" *)
+(* x_core_info = "axi_timer,Vivado 2019.1" *)
 module heterogeneous_computing_axi_timer_0_0(capturetrig0, capturetrig1, generateout0, 
   generateout1, pwm0, interrupt, freeze, s_axi_aclk, s_axi_aresetn, s_axi_awaddr, s_axi_awvalid, 
   s_axi_awready, s_axi_wdata, s_axi_wstrb, s_axi_wvalid, s_axi_wready, s_axi_bresp, 

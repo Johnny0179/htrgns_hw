@@ -1,10 +1,10 @@
--- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Mon Sep 23 11:26:33 2019
+-- Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+-- Date        : Tue Oct  8 16:12:05 2019
 -- Host        : johnny-OptiPlex-7040 running 64-bit Ubuntu 16.04.6 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               /home/johnny/zynq/heterogeneous_computing/heterogeneous_computing_0921/heterogeneous_computing_0921.srcs/sources_1/bd/heterogeneous_computing/ip/heterogeneous_computing_ps_pl_mem_0/heterogeneous_computing_ps_pl_mem_0_sim_netlist.vhdl
+--               /home/johnny/zynq/htrgns_computing/heterogeneous_computing_1008/heterogeneous_computing_1008.srcs/sources_1/bd/heterogeneous_computing/ip/heterogeneous_computing_ps_pl_mem_0/heterogeneous_computing_ps_pl_mem_0_sim_netlist.vhdl
 -- Design      : heterogeneous_computing_ps_pl_mem_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -2447,10 +2447,6 @@ entity \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterize
   port (
     douta : out STD_LOGIC_VECTOR ( 3 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    rsta_busy : out STD_LOGIC;
-    rstb_busy : out STD_LOGIC;
-    ENA_dly : out STD_LOGIC;
-    ENB_dly : out STD_LOGIC;
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
     ENA_I : in STD_LOGIC;
@@ -2462,13 +2458,7 @@ entity \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterize
     dina : in STD_LOGIC_VECTOR ( 3 downto 0 );
     dinb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-    web : in STD_LOGIC_VECTOR ( 0 to 0 );
-    ram_rstram_a_busy : in STD_LOGIC;
-    ram_rstram_b_busy : in STD_LOGIC;
-    rsta : in STD_LOGIC;
-    POR_A : in STD_LOGIC;
-    rstb : in STD_LOGIC;
-    POR_B : in STD_LOGIC
+    web : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized4\ : entity is "blk_mem_gen_prim_width";
@@ -2476,44 +2466,6 @@ end \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized4\
 
 architecture STRUCTURE of \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized4\ is
 begin
-\SAFETY_CKT_GEN.ENA_NO_REG.ENA_dly_reg\: unisim.vcomponents.FDSE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => clka,
-      CE => '1',
-      D => POR_A,
-      Q => ENA_dly,
-      S => rsta
-    );
-\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg\: unisim.vcomponents.FDSE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => clkb,
-      CE => '1',
-      D => POR_B,
-      Q => ENB_dly,
-      S => rstb
-    );
-\SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_reg\: unisim.vcomponents.FDRE
-     port map (
-      C => clka,
-      CE => '1',
-      D => ram_rstram_a_busy,
-      Q => rsta_busy,
-      R => '0'
-    );
-\SAFETY_CKT_GEN.nSPRAM_RST_BUSY.RSTB_BUSY_NO_REG.RSTB_BUSY_reg\: unisim.vcomponents.FDRE
-     port map (
-      C => clkb,
-      CE => '1',
-      D => ram_rstram_b_busy,
-      Q => rstb_busy,
-      R => '0'
-    );
 \prim_noinit.ram\: entity work.\heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_wrapper__parameterized4\
      port map (
       ENA_I => ENA_I,
@@ -2589,10 +2541,8 @@ entity \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterize
     ENB_I : out STD_LOGIC;
     ram_rstram_a : out STD_LOGIC;
     ram_rstram_b : out STD_LOGIC;
-    POR_A : out STD_LOGIC;
-    POR_B : out STD_LOGIC;
-    ram_rstram_a_busy : out STD_LOGIC;
-    ram_rstram_b_busy : out STD_LOGIC;
+    rsta_busy : out STD_LOGIC;
+    rstb_busy : out STD_LOGIC;
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 12 downto 0 );
@@ -2601,8 +2551,6 @@ entity \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterize
     dinb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     web : in STD_LOGIC_VECTOR ( 0 to 0 );
-    ENA_dly : in STD_LOGIC;
-    ENB_dly : in STD_LOGIC;
     rsta : in STD_LOGIC;
     ena : in STD_LOGIC;
     rstb : in STD_LOGIC;
@@ -2613,10 +2561,12 @@ entity \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterize
 end \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized6\;
 
 architecture STRUCTURE of \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized6\ is
+  signal ENA_dly : STD_LOGIC;
   signal ENA_dly_D : STD_LOGIC;
+  signal ENB_dly : STD_LOGIC;
   signal ENB_dly_D : STD_LOGIC;
-  signal \^por_a\ : STD_LOGIC;
-  signal \^por_b\ : STD_LOGIC;
+  signal POR_A : STD_LOGIC;
+  signal POR_B : STD_LOGIC;
   signal \SAFETY_CKT_GEN.POR_A_i_1_n_0\ : STD_LOGIC;
   signal \SAFETY_CKT_GEN.POR_B_i_1_n_0\ : STD_LOGIC;
   signal \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[3]_srl3_n_0\ : STD_LOGIC;
@@ -2625,6 +2575,10 @@ architecture STRUCTURE of \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_
   signal \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3_n_0\ : STD_LOGIC;
   signal \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[0]\ : STD_LOGIC;
   signal \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[4]\ : STD_LOGIC;
+  signal \^ram_rstram_a\ : STD_LOGIC;
+  signal ram_rstram_a_busy : STD_LOGIC;
+  signal \^ram_rstram_b\ : STD_LOGIC;
+  signal ram_rstram_b_busy : STD_LOGIC;
   attribute srl_bus_name : string;
   attribute srl_bus_name of \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[3]_srl3\ : label is "U0/\inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[7].ram.r/SAFETY_CKT_GEN.RSTA_SHFT_REG_reg ";
   attribute srl_name : string;
@@ -2632,8 +2586,8 @@ architecture STRUCTURE of \heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_
   attribute srl_bus_name of \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3\ : label is "U0/\inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[7].ram.r/SAFETY_CKT_GEN.RSTB_SHFT_REG_reg ";
   attribute srl_name of \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3\ : label is "U0/\inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[7].ram.r/SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3 ";
 begin
-  POR_A <= \^por_a\;
-  POR_B <= \^por_b\;
+  ram_rstram_a <= \^ram_rstram_a\;
+  ram_rstram_b <= \^ram_rstram_b\;
 \SAFETY_CKT_GEN.ENA_NO_REG.ENA_dly_D_reg\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -2643,6 +2597,17 @@ begin
       CE => '1',
       D => ENA_dly,
       Q => ENA_dly_D,
+      R => '0'
+    );
+\SAFETY_CKT_GEN.ENA_NO_REG.ENA_dly_reg\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clka,
+      CE => '1',
+      D => \^ram_rstram_a\,
+      Q => ENA_dly,
       R => '0'
     );
 \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_D_reg\: unisim.vcomponents.FDRE
@@ -2656,13 +2621,24 @@ begin
       Q => ENB_dly_D,
       R => '0'
     );
+\SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clkb,
+      CE => '1',
+      D => \^ram_rstram_b\,
+      Q => ENB_dly,
+      R => '0'
+    );
 \SAFETY_CKT_GEN.POR_A_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"6"
     )
         port map (
-      I0 => \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4]\,
-      I1 => \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[0]\,
+      I0 => \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[0]\,
+      I1 => \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4]\,
       O => \SAFETY_CKT_GEN.POR_A_i_1_n_0\
     );
 \SAFETY_CKT_GEN.POR_A_reg\: unisim.vcomponents.FDRE
@@ -2673,7 +2649,7 @@ begin
       C => clka,
       CE => '1',
       D => \SAFETY_CKT_GEN.POR_A_i_1_n_0\,
-      Q => \^por_a\,
+      Q => POR_A,
       R => '0'
     );
 \SAFETY_CKT_GEN.POR_B_i_1\: unisim.vcomponents.LUT2
@@ -2681,8 +2657,8 @@ begin
       INIT => X"6"
     )
         port map (
-      I0 => \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[4]\,
-      I1 => \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[0]\,
+      I0 => \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[0]\,
+      I1 => \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg_n_0_[4]\,
       O => \SAFETY_CKT_GEN.POR_B_i_1_n_0\
     );
 \SAFETY_CKT_GEN.POR_B_reg\: unisim.vcomponents.FDRE
@@ -2693,7 +2669,7 @@ begin
       C => clkb,
       CE => '1',
       D => \SAFETY_CKT_GEN.POR_B_i_1_n_0\,
-      Q => \^por_b\,
+      Q => POR_B,
       R => '0'
     );
 \SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_i_1\: unisim.vcomponents.LUT4
@@ -2701,11 +2677,19 @@ begin
       INIT => X"FFFE"
     )
         port map (
-      I0 => ENA_dly_D,
+      I0 => POR_A,
       I1 => rsta,
-      I2 => \^por_a\,
-      I3 => ENA_dly,
+      I2 => ENA_dly,
+      I3 => ENA_dly_D,
       O => ram_rstram_a_busy
+    );
+\SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_reg\: unisim.vcomponents.FDRE
+     port map (
+      C => clka,
+      CE => '1',
+      D => ram_rstram_a_busy,
+      Q => rsta_busy,
+      R => '0'
     );
 \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -2784,11 +2768,19 @@ begin
       INIT => X"FFFE"
     )
         port map (
-      I0 => ENB_dly_D,
+      I0 => POR_B,
       I1 => rstb,
-      I2 => \^por_b\,
-      I3 => ENB_dly,
+      I2 => ENB_dly,
+      I3 => ENB_dly_D,
       O => ram_rstram_b_busy
+    );
+\SAFETY_CKT_GEN.nSPRAM_RST_BUSY.RSTB_BUSY_NO_REG.RSTB_BUSY_reg\: unisim.vcomponents.FDRE
+     port map (
+      C => clkb,
+      CE => '1',
+      D => ram_rstram_b_busy,
+      Q => rstb_busy,
+      R => '0'
     );
 \prim_noinit.ram\: entity work.\heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_wrapper__parameterized6\
      port map (
@@ -2796,8 +2788,8 @@ begin
       ENA_dly_D => ENA_dly_D,
       ENB_I => ENB_I,
       ENB_dly_D => ENB_dly_D,
-      POR_A => \^por_a\,
-      POR_B => \^por_b\,
+      POR_A => POR_A,
+      POR_B => POR_B,
       addra(12 downto 0) => addra(12 downto 0),
       addrb(12 downto 0) => addrb(12 downto 0),
       clka => clka,
@@ -2808,8 +2800,8 @@ begin
       doutb(3 downto 0) => doutb(3 downto 0),
       ena => ena,
       enb => enb,
-      ram_rstram_a => ram_rstram_a,
-      ram_rstram_b => ram_rstram_b,
+      ram_rstram_a => \^ram_rstram_a\,
+      ram_rstram_b => \^ram_rstram_b\,
       rsta => rsta,
       rstb => rstb,
       wea(0) => wea(0),
@@ -2845,15 +2837,9 @@ end heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_generic_cstr is
   signal ENA_I : STD_LOGIC;
-  signal ENA_dly : STD_LOGIC;
   signal ENB_I : STD_LOGIC;
-  signal ENB_dly : STD_LOGIC;
-  signal POR_A : STD_LOGIC;
-  signal POR_B : STD_LOGIC;
   signal ram_rstram_a : STD_LOGIC;
-  signal ram_rstram_a_busy : STD_LOGIC;
   signal ram_rstram_b : STD_LOGIC;
-  signal ram_rstram_b_busy : STD_LOGIC;
 begin
 \ramloop[0].ram.r\: entity work.heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width
      port map (
@@ -2943,11 +2929,7 @@ begin
 \ramloop[5].ram.r\: entity work.\heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized4\
      port map (
       ENA_I => ENA_I,
-      ENA_dly => ENA_dly,
       ENB_I => ENB_I,
-      ENB_dly => ENB_dly,
-      POR_A => POR_A,
-      POR_B => POR_B,
       addra(12 downto 0) => addra(12 downto 0),
       addrb(12 downto 0) => addrb(12 downto 0),
       clka => clka,
@@ -2957,13 +2939,7 @@ begin
       douta(3 downto 0) => douta(23 downto 20),
       doutb(3 downto 0) => doutb(23 downto 20),
       ram_rstram_a => ram_rstram_a,
-      ram_rstram_a_busy => ram_rstram_a_busy,
       ram_rstram_b => ram_rstram_b,
-      ram_rstram_b_busy => ram_rstram_b_busy,
-      rsta => rsta,
-      rsta_busy => rsta_busy,
-      rstb => rstb,
-      rstb_busy => rstb_busy,
       wea(0) => wea(2),
       web(0) => web(2)
     );
@@ -2987,11 +2963,7 @@ begin
 \ramloop[7].ram.r\: entity work.\heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_prim_width__parameterized6\
      port map (
       ENA_I => ENA_I,
-      ENA_dly => ENA_dly,
       ENB_I => ENB_I,
-      ENB_dly => ENB_dly,
-      POR_A => POR_A,
-      POR_B => POR_B,
       addra(12 downto 0) => addra(12 downto 0),
       addrb(12 downto 0) => addrb(12 downto 0),
       clka => clka,
@@ -3003,11 +2975,11 @@ begin
       ena => ena,
       enb => enb,
       ram_rstram_a => ram_rstram_a,
-      ram_rstram_a_busy => ram_rstram_a_busy,
       ram_rstram_b => ram_rstram_b,
-      ram_rstram_b_busy => ram_rstram_b_busy,
       rsta => rsta,
+      rsta_busy => rsta_busy,
       rstb => rstb,
+      rstb_busy => rstb_busy,
       wea(0) => wea(3),
       web(0) => web(3)
     );
@@ -3065,7 +3037,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth is
+entity heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3_synth is
   port (
     douta : out STD_LOGIC_VECTOR ( 31 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -3085,10 +3057,10 @@ entity heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth is
     enb : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth : entity is "blk_mem_gen_v8_4_1_synth";
-end heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth;
+  attribute ORIG_REF_NAME of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3_synth : entity is "blk_mem_gen_v8_4_3_synth";
+end heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3_synth;
 
-architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth is
+architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3_synth is
 begin
 \gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen\: entity work.heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_top
      port map (
@@ -3114,7 +3086,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 is
+entity heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 is
   port (
     clka : in STD_LOGIC;
     rsta : in STD_LOGIC;
@@ -3181,158 +3153,162 @@ entity heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 is
     s_axi_rdaddrecc : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute C_ADDRA_WIDTH : integer;
-  attribute C_ADDRA_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 32;
+  attribute C_ADDRA_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 32;
   attribute C_ADDRB_WIDTH : integer;
-  attribute C_ADDRB_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 32;
+  attribute C_ADDRB_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 32;
   attribute C_ALGORITHM : integer;
-  attribute C_ALGORITHM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_ALGORITHM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_AXI_ID_WIDTH : integer;
-  attribute C_AXI_ID_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 4;
+  attribute C_AXI_ID_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 4;
   attribute C_AXI_SLAVE_TYPE : integer;
-  attribute C_AXI_SLAVE_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_AXI_SLAVE_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_AXI_TYPE : integer;
-  attribute C_AXI_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_AXI_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_BYTE_SIZE : integer;
-  attribute C_BYTE_SIZE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 8;
+  attribute C_BYTE_SIZE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 8;
   attribute C_COMMON_CLK : integer;
-  attribute C_COMMON_CLK of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_COMMON_CLK of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_COUNT_18K_BRAM : string;
-  attribute C_COUNT_18K_BRAM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "0";
+  attribute C_COUNT_18K_BRAM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "0";
   attribute C_COUNT_36K_BRAM : string;
-  attribute C_COUNT_36K_BRAM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "8";
+  attribute C_COUNT_36K_BRAM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "8";
   attribute C_CTRL_ECC_ALGO : string;
-  attribute C_CTRL_ECC_ALGO of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "NONE";
+  attribute C_CTRL_ECC_ALGO of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "NONE";
   attribute C_DEFAULT_DATA : string;
-  attribute C_DEFAULT_DATA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "0";
+  attribute C_DEFAULT_DATA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "0";
   attribute C_DISABLE_WARN_BHV_COLL : integer;
-  attribute C_DISABLE_WARN_BHV_COLL of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_DISABLE_WARN_BHV_COLL of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_DISABLE_WARN_BHV_RANGE : integer;
-  attribute C_DISABLE_WARN_BHV_RANGE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_DISABLE_WARN_BHV_RANGE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_ELABORATION_DIR : string;
-  attribute C_ELABORATION_DIR of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "./";
+  attribute C_ELABORATION_DIR of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "./";
   attribute C_ENABLE_32BIT_ADDRESS : integer;
-  attribute C_ENABLE_32BIT_ADDRESS of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_ENABLE_32BIT_ADDRESS of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_EN_DEEPSLEEP_PIN : integer;
-  attribute C_EN_DEEPSLEEP_PIN of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_EN_DEEPSLEEP_PIN of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_EN_ECC_PIPE : integer;
-  attribute C_EN_ECC_PIPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_EN_ECC_PIPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_EN_RDADDRA_CHG : integer;
-  attribute C_EN_RDADDRA_CHG of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_EN_RDADDRA_CHG of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_EN_RDADDRB_CHG : integer;
-  attribute C_EN_RDADDRB_CHG of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_EN_RDADDRB_CHG of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_EN_SAFETY_CKT : integer;
-  attribute C_EN_SAFETY_CKT of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_EN_SAFETY_CKT of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_EN_SHUTDOWN_PIN : integer;
-  attribute C_EN_SHUTDOWN_PIN of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_EN_SHUTDOWN_PIN of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_EN_SLEEP_PIN : integer;
-  attribute C_EN_SLEEP_PIN of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_EN_SLEEP_PIN of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_EST_POWER_SUMMARY : string;
-  attribute C_EST_POWER_SUMMARY of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "Estimated Power for IP     :     20.388 mW";
+  attribute C_EST_POWER_SUMMARY of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "Estimated Power for IP     :     20.388 mW";
   attribute C_FAMILY : string;
-  attribute C_FAMILY of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "zynq";
+  attribute C_FAMILY of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "zynq";
   attribute C_HAS_AXI_ID : integer;
-  attribute C_HAS_AXI_ID of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_AXI_ID of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_ENA : integer;
-  attribute C_HAS_ENA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_HAS_ENA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_HAS_ENB : integer;
-  attribute C_HAS_ENB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_HAS_ENB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_HAS_INJECTERR : integer;
-  attribute C_HAS_INJECTERR of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_INJECTERR of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_A : integer;
-  attribute C_HAS_MEM_OUTPUT_REGS_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_MEM_OUTPUT_REGS_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_B : integer;
-  attribute C_HAS_MEM_OUTPUT_REGS_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_MEM_OUTPUT_REGS_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_MUX_OUTPUT_REGS_A : integer;
-  attribute C_HAS_MUX_OUTPUT_REGS_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_MUX_OUTPUT_REGS_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_MUX_OUTPUT_REGS_B : integer;
-  attribute C_HAS_MUX_OUTPUT_REGS_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_MUX_OUTPUT_REGS_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_REGCEA : integer;
-  attribute C_HAS_REGCEA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_REGCEA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_REGCEB : integer;
-  attribute C_HAS_REGCEB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_REGCEB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_RSTA : integer;
-  attribute C_HAS_RSTA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_HAS_RSTA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_HAS_RSTB : integer;
-  attribute C_HAS_RSTB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_HAS_RSTB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_HAS_SOFTECC_INPUT_REGS_A : integer;
-  attribute C_HAS_SOFTECC_INPUT_REGS_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_SOFTECC_INPUT_REGS_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_HAS_SOFTECC_OUTPUT_REGS_B : integer;
-  attribute C_HAS_SOFTECC_OUTPUT_REGS_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_SOFTECC_OUTPUT_REGS_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_INITA_VAL : string;
-  attribute C_INITA_VAL of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "0";
+  attribute C_INITA_VAL of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "0";
   attribute C_INITB_VAL : string;
-  attribute C_INITB_VAL of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "0";
+  attribute C_INITB_VAL of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "0";
   attribute C_INIT_FILE : string;
-  attribute C_INIT_FILE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "NONE";
+  attribute C_INIT_FILE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "NONE";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "no_coe_file_loaded";
+  attribute C_INIT_FILE_NAME of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "no_coe_file_loaded";
   attribute C_INTERFACE_TYPE : integer;
-  attribute C_INTERFACE_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_INTERFACE_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_LOAD_INIT_FILE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_MEM_TYPE : integer;
-  attribute C_MEM_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 2;
+  attribute C_MEM_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 2;
   attribute C_MUX_PIPELINE_STAGES : integer;
-  attribute C_MUX_PIPELINE_STAGES of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_MUX_PIPELINE_STAGES of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_PRIM_TYPE : integer;
-  attribute C_PRIM_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_PRIM_TYPE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_READ_DEPTH_A : integer;
-  attribute C_READ_DEPTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 8192;
+  attribute C_READ_DEPTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 8192;
   attribute C_READ_DEPTH_B : integer;
-  attribute C_READ_DEPTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 8192;
+  attribute C_READ_DEPTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 8192;
+  attribute C_READ_LATENCY_A : integer;
+  attribute C_READ_LATENCY_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
+  attribute C_READ_LATENCY_B : integer;
+  attribute C_READ_LATENCY_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_READ_WIDTH_A : integer;
-  attribute C_READ_WIDTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 32;
+  attribute C_READ_WIDTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 32;
   attribute C_READ_WIDTH_B : integer;
-  attribute C_READ_WIDTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 32;
+  attribute C_READ_WIDTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 32;
   attribute C_RSTRAM_A : integer;
-  attribute C_RSTRAM_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_RSTRAM_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_RSTRAM_B : integer;
-  attribute C_RSTRAM_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_RSTRAM_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_RST_PRIORITY_A : string;
-  attribute C_RST_PRIORITY_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "CE";
+  attribute C_RST_PRIORITY_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "CE";
   attribute C_RST_PRIORITY_B : string;
-  attribute C_RST_PRIORITY_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "CE";
+  attribute C_RST_PRIORITY_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "CE";
   attribute C_SIM_COLLISION_CHECK : string;
-  attribute C_SIM_COLLISION_CHECK of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "ALL";
+  attribute C_SIM_COLLISION_CHECK of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "ALL";
   attribute C_USE_BRAM_BLOCK : integer;
-  attribute C_USE_BRAM_BLOCK of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_USE_BRAM_BLOCK of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_USE_BYTE_WEA : integer;
-  attribute C_USE_BYTE_WEA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_USE_BYTE_WEA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_USE_BYTE_WEB : integer;
-  attribute C_USE_BYTE_WEB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_USE_BYTE_WEB of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 1;
   attribute C_USE_DEFAULT_DATA : integer;
-  attribute C_USE_DEFAULT_DATA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_USE_DEFAULT_DATA of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_USE_ECC : integer;
-  attribute C_USE_ECC of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_USE_ECC of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_USE_SOFTECC : integer;
-  attribute C_USE_SOFTECC of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_USE_SOFTECC of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_USE_URAM : integer;
-  attribute C_USE_URAM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_USE_URAM of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 0;
   attribute C_WEA_WIDTH : integer;
-  attribute C_WEA_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 4;
+  attribute C_WEA_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 4;
   attribute C_WEB_WIDTH : integer;
-  attribute C_WEB_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 4;
+  attribute C_WEB_WIDTH of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 4;
   attribute C_WRITE_DEPTH_A : integer;
-  attribute C_WRITE_DEPTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 8192;
+  attribute C_WRITE_DEPTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 8192;
   attribute C_WRITE_DEPTH_B : integer;
-  attribute C_WRITE_DEPTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 8192;
+  attribute C_WRITE_DEPTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 8192;
   attribute C_WRITE_MODE_A : string;
-  attribute C_WRITE_MODE_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "WRITE_FIRST";
+  attribute C_WRITE_MODE_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "WRITE_FIRST";
   attribute C_WRITE_MODE_B : string;
-  attribute C_WRITE_MODE_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "WRITE_FIRST";
+  attribute C_WRITE_MODE_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "WRITE_FIRST";
   attribute C_WRITE_WIDTH_A : integer;
-  attribute C_WRITE_WIDTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 32;
+  attribute C_WRITE_WIDTH_A of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 32;
   attribute C_WRITE_WIDTH_B : integer;
-  attribute C_WRITE_WIDTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is 32;
+  attribute C_WRITE_WIDTH_B of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
-  attribute C_XDEVICEFAMILY of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "zynq";
+  attribute C_XDEVICEFAMILY of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "zynq";
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "blk_mem_gen_v8_4_1";
+  attribute ORIG_REF_NAME of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "blk_mem_gen_v8_4_3";
   attribute downgradeipidentifiedwarnings : string;
-  attribute downgradeipidentifiedwarnings of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 : entity is "yes";
-end heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1;
+  attribute downgradeipidentifiedwarnings of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 : entity is "yes";
+end heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3;
 
-architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1 is
+architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3 is
   signal \<const0>\ : STD_LOGIC;
 begin
   dbiterr <= \<const0>\;
@@ -3457,7 +3433,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-inst_blk_mem_gen: entity work.heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1_synth
+inst_blk_mem_gen: entity work.heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3_synth
      port map (
       addra(12 downto 0) => addra(14 downto 2),
       addrb(12 downto 0) => addrb(14 downto 2),
@@ -3503,11 +3479,11 @@ entity heterogeneous_computing_ps_pl_mem_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of heterogeneous_computing_ps_pl_mem_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of heterogeneous_computing_ps_pl_mem_0 : entity is "heterogeneous_computing_ps_pl_mem_0,blk_mem_gen_v8_4_1,{}";
+  attribute CHECK_LICENSE_TYPE of heterogeneous_computing_ps_pl_mem_0 : entity is "heterogeneous_computing_ps_pl_mem_0,blk_mem_gen_v8_4_3,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of heterogeneous_computing_ps_pl_mem_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of heterogeneous_computing_ps_pl_mem_0 : entity is "blk_mem_gen_v8_4_1,Vivado 2017.4";
+  attribute x_core_info of heterogeneous_computing_ps_pl_mem_0 : entity is "blk_mem_gen_v8_4_3,Vivado 2019.1";
 end heterogeneous_computing_ps_pl_mem_0;
 
 architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0 is
@@ -3628,6 +3604,10 @@ architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0 is
   attribute C_READ_DEPTH_A of U0 : label is 8192;
   attribute C_READ_DEPTH_B : integer;
   attribute C_READ_DEPTH_B of U0 : label is 8192;
+  attribute C_READ_LATENCY_A : integer;
+  attribute C_READ_LATENCY_A of U0 : label is 1;
+  attribute C_READ_LATENCY_B : integer;
+  attribute C_READ_LATENCY_B of U0 : label is 1;
   attribute C_READ_WIDTH_A : integer;
   attribute C_READ_WIDTH_A of U0 : label is 32;
   attribute C_READ_WIDTH_B : integer;
@@ -3678,9 +3658,9 @@ architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0 is
   attribute x_interface_info : string;
   attribute x_interface_info of clka : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clka : signal is "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE";
+  attribute x_interface_parameter of clka : signal is "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE, READ_LATENCY 1";
   attribute x_interface_info of clkb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK";
-  attribute x_interface_parameter of clkb : signal is "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE";
+  attribute x_interface_parameter of clkb : signal is "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 32768, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE BRAM_CTRL, READ_WRITE_MODE READ_WRITE, READ_LATENCY 1";
   attribute x_interface_info of ena : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA EN";
   attribute x_interface_info of enb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB EN";
   attribute x_interface_info of rsta : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA RST";
@@ -3694,7 +3674,7 @@ architecture STRUCTURE of heterogeneous_computing_ps_pl_mem_0 is
   attribute x_interface_info of wea : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA WE";
   attribute x_interface_info of web : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB WE";
 begin
-U0: entity work.heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_1
+U0: entity work.heterogeneous_computing_ps_pl_mem_0_blk_mem_gen_v8_4_3
      port map (
       addra(31 downto 0) => addra(31 downto 0),
       addrb(31 downto 0) => addrb(31 downto 0),
